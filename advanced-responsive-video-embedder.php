@@ -15,15 +15,17 @@
  * @wordpress-plugin
  * Plugin Name:       Advanced Responsive Video Embedder
  * Plugin URI:        https://nextgenthemes.com/plugins/advanced-responsive-video-embedder/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress dashboard.
+ * Description:       Modification of Advanced Responsive Video Embedder that will support automatic posts from ifttt
  * Version:           5.4.2
  * Author:            Nicolas Jonas
  * Author URI:        http://nico.onl
+ * Modified By:       Ed Myers
+ * Modified By URI:   http://www.edmyers.net
  * License:           GPL-3.0
  * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       advanced-responsive-video-embedder
  * Domain Path:       /languages
- * GitHub Plugin URI: https://github.com/nextgenthemes/advanced-responsive-video-embedder
+ * GitHub Plugin URI: https://github.com/edmyersjr/advanced-responsive-video-embedder
  * Github Branch:     master
  */
 

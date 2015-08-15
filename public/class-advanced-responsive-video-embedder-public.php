@@ -212,6 +212,7 @@ class Advanced_Responsive_Video_Embedder_Public {
 				'mode'         => '',
 				'parameters'   => '',
 				'start'        => '',
+                'url'          => '',
 			), $params[0] );
 			
 			return $this->build_embed( $provider, $shortcode_atts );		
@@ -266,10 +267,12 @@ class Advanced_Responsive_Video_Embedder_Public {
 			'maxwidth'     => '',
 			'mode'         => '',
 			'parameters'   => '',
-			'start'        => ''
+			'start'        => '',
+            'url'          => ''
 		), $atts );
 
 		$shortcode_atts['id'] = $id;
+
 
 		$output .= $this->build_embed( $provider, $shortcode_atts );
 		$output .= sprintf( '<a href="%s" class="arve-hidden">%s</a>', esc_url( $url ), esc_html( $url ) );
@@ -327,8 +330,15 @@ class Advanced_Responsive_Video_Embedder_Public {
 
 		switch ( $id ) {
 			case '':
-				return $this->error( __( 'no video ID set', $this->plugin_slug ) );
-				break;
+                if ( ! empty ($url) ) {
+                    preg_match('/.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=)([^#\&\?]*).*/', $url, $matches);
+                    $id = $matches[1];
+                }
+                if ( $id == '' ) {
+                    return $this->error(__('no video ID set', $this->plugin_slug));
+                    break;
+                }
+
 			case ( ! preg_match('/[^\x20-\x7f]/', $id ) ):
 				break;
 			default:
